@@ -1,0 +1,179 @@
+:root{
+    --background: #111;
+}
+body{
+    background-color: var(--background);
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #fffC;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    user-select: none;
+}
+*,*::before{
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+header,footer{ height: 5rem; display: flex; justify-content: space-around; align-items: center; position: relative;}
+footer{ font-size: 2rem; pointer-events: none;}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    height: calc( 100% - 10rem );
+    align-items: center;
+    justify-content: space-around;
+}
+
+section{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 4.25rem;
+    height: 16rem;
+    padding: 1.25rem 0;
+    margin: 0 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.doot{
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+.selected{
+    filter: drop-shadow( 0 0 0.5rem black );
+    position: absolute;
+    top: -1.5rem;
+}
+
+.tube{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background-image: url(./z/tube.png);
+    position: absolute;
+    bottom: 0;
+}
+
+.button{
+    width: 10rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background);
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.25rem;
+}
+.button.reset{ background-image: url(./z/reset.png); }
+.button.surrender{ background-image: url(./z/surrender.png); }
+.button.begin{ background-image: url(./z/begin.png); }
+.button.options{ background-image: url(./z/options.png); }
+.button.disabled{ filter: saturate(0); cursor: auto; pointer-events: none; }
+
+.buttonBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.score{
+    position: absolute;
+    font-size: 13rem;
+    z-index: -10;
+    bottom: calc( 50% - 6.5rem);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0.1;
+}
+.info{
+    position: absolute;
+    font-size: 2rem;
+    z-index: -5;
+    bottom: calc( 50% - 1rem);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+}
+
+.appealing{}
+
+.moves{
+    width: 10rem;
+    height: 2rem;
+    position: absolute;
+    left: calc( 50% - 5rem );
+    top: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.goal{ width: 2rem; height: 2rem; }
+.goal.lost{ filter: saturate(0) brightness( 0.5 ); }
+
+.bar{
+    height: 2px;
+    position: absolute;
+    z-index: -5;
+    top: calc( 2.5rem - 1px );
+    background-color: #FFFC;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 20;
+    flex-direction: column;
+    padding: 2rem;
+}
+.modal.hidden{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.inHead{
+    font-size: 2.5rem;
+    border-bottom: solid white;
+    width: 100%;
+    text-align: center;
+}
+.instruction{
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+.example{
+    background-image: url(./z/example.PNG);
+    width: 100%;
+    height: 5rem;
+}
+
+.outcomeMessage{
+    font-size: 2.5rem;
+    width: 100%;
+    text-align: center;
+}
+.outcomeIco{
+    width: 10rem;
+    height: 10rem;
+}
